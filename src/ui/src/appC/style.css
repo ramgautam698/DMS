@@ -1,0 +1,28 @@
+
+.leftbox {
+	float:left;
+	width:25%;
+	height:100px;
+	background:skyblue;
+	text-align:center;
+}
+.middlebox{
+	float:left; 
+	background:skyblue;
+	width:50%;
+	height:100px;
+	text-align:center;
+}
+.rightbox{
+	float:right;
+	width:25%;
+	height:100px;
+	background:skyblue;
+	text-align:center;
+}
+
+.title{
+	background:aqua;
+	width:100%;
+	text-align:center;
+}

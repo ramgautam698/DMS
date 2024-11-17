@@ -1,0 +1,390 @@
+
+use Spring;
+UPDATE doc_seq SET next_val = 3 WHERE next_val=4;
+
+use Spring;
+UPDATE hibernate_sequence SET next_val = 1 WHERE next_val=2;
+
+use Spring;
+UPDATE user_generator SET next_val = 2 WHERE next_val=5;
+
+<List height={150} itemCount={1000} itemSize={35} width={300} >
+
+document.getElementById("Textarea1").innerHTML = this.responseText;
+<Routes>
+				<Route path="/" element={
+					<React.Fragment>
+						<Header />
+						<Home />
+						<Footer />
+					</React.Fragment>
+				}></Route>
+			</Routes>
+			
+			<div style={{marginLeft:"1%", marginTop:"1%", marginRight:"1%" , marginBottom: "1%" }}>
+			Access to all files.
+			<button  onClick={getDIR} >get</button>
+			  <List height={200} itemCount={1000} itemSize={35} style={{ backgroundColor:"aqua" }} >
+			  	{Row}
+			  </List>
+			  <div id="fileList"></div>
+		</div>
+		
+		$.ajax({
+			type: "POST",
+			url: "http://127.0.0.1:8080/api/openFILE/"+ id,
+			xhrFields:
+			{
+				responseType: 'blob' // to avoid binary data being mangled on charset conversion
+			},
+			success: function (blob, status, xhr)
+			{
+				var URL = window.URL || window.webkitURL;
+				var downloadUrl = URL.createObjectURL(blob);
+				var a = document.createElement("a");
+				if (typeof a.download === 'undefined')
+				{
+					window.location.href = downloadUrl;
+				}
+				else
+				{
+					a.href = downloadUrl;
+					a.download = name;
+					a.style.display = 'none';
+					document.body.appendChild(a);
+					a.click();
+				}
+				setTimeout(function () { URL.revokeObjectURL(downloadUrl); }, 100); // cleanup
+			}
+		});
+
+<div id="details" style={{ display: "none", marginLeft: '5%' }}>
+		<Button className="btn btn-light" onClick={hideDetail}>Hide Details</Button><br />
+    	<h4>Its id is <a id="docid"></a></h4>
+		<a id="more_info"></a>
+		<div id="hide" style={{ display: "none" }}>
+		<p>
+			If you want to change the name of file, type full file name here(with extension)<br />
+			<input type="text" id="titleName" placeholder="NewName.txt"></input>&nbsp;&nbsp;&nbsp;
+			<Button className="btn bth-success" onClick={changeFileName}>Change File Name</Button>
+		</p>
+		<p>Update this document:&nbsp;&nbsp;&nbsp;
+			<input id="fileupload" className="btn btn-secondary" type="file" id="fileupload" />
+			&nbsp;&nbsp;&nbsp;<Button className="btn btn-warning" onClick={update}>Update</Button>
+			&nbsp;&nbsp;&nbsp;<a id="fmsg"></a>
+		</p>
+		<p>
+			Share this document with ID = &nbsp;&nbsp;
+			<input type="number" name="shared_num" placeholder="1"></input>&nbsp;&nbsp;&nbsp;
+			<Button type="button" onClick={shareDocument} className="btn btn-success">Share</Button><br />
+			<a id="shared"></a>
+			Un-Share this document with ID = &nbsp;&nbsp;
+			<input type="number" name="unshared_num" placeholder="1"></input>&nbsp;&nbsp;&nbsp;
+			<Button type="button" onClick={unshareDocument} className="btn btn-secondary">Un-Share</Button><br />
+		</p>
+		<Button className="btn btn-danger" onClick={Delete}>Delete This Document</Button>
+		<div id="confirm_del" style={{ display: "none" }}>
+			Are you sure you want to delete this document?This cannot be undone.<br />
+			<Button className="btn btn-danger" onClick={DeleteFinal} >Yes. Delete This Document.</Button>
+			<Button className="btn btn-success" onClick={DeleteCancel}>No. Don't Delete it.</Button>
+		</div>
+		</div>
+	</div>
+
+var a = sessionStorage.getItem("A");
+		if(a)
+		{
+			document.getElementById("allDoc").style.display = "block";
+			return;
+		}
+		sessionStorage.setItem("A", true);
+		<Button onClick={getAllDocuments}>Get All My Document</Button>
+			<Nav.Link href="/addDocument">Add Document</Nav.Link>
+			<Button onClick={getFriendDocument}>Get Friends Document</Button>
+			<Button onClick={mySharedDocument}>My Shared Document</Button>
+			<Button onClick={sharedHistory}>Shared History</Button>
+
+<Content><id>4</id><data>This is for the test.nothing serious.</data></Content>
+
+	@PostMapping("/redirectWithRedirectPrefix")
+    public ModelAndView redirectWithUsingRedirectPrefix(ModelMap model) {
+        model.addAttribute("attribute", "redirectWithRedirectPrefix");
+        return new ModelAndView("redirect:/redirectedUrl", model);
+    }
+	
+	@GetMapping("/redirectedUrl")
+	public String redirect()
+	{
+		return "signUp";
+	}
+	
+	@GetMapping("/search")
+	public String search() //@RequestBody String data
+	{
+		return "search";
+	}
+	
+	//	public String Ulogin(@ModelAttribute User user, Model model, HttpSession session)
+//	{
+//		try
+//		{
+//			User u = userservice.login(user);
+//			session.setAttribute("ActiveUserID", u.getUserID());
+//			model.addAttribute("name", u.getName());
+//			return "userpage";
+//		}
+//		catch(RuntimeException e)
+//		{
+//			model.addAttribute("msg", e.getMessage());
+//			return "login";
+//		}
+//	}
+
+@RequestMapping("/userpage")
+	public String userpage(HttpServletRequest req, Model model)
+	{
+		this.a = false;
+		
+		model.addAttribute("password", req.getParameter("password"));
+		model.addAttribute("email", req.getParameter("email"));
+		  
+		User u = new User();
+		u.setEmail(req.getParameter("email"));
+		u.setPassword(req.getParameter("password"));
+		u.setName(req.getParameter("name"));
+		
+		return "userpage";
+	}
+
+File file = new File(d.getLocation() + d.getTitle());
+			Scanner data = new Scanner(file);
+			String content = "";
+			while (data.hasNextLine())
+				content = content + data.nextLine();
+			//System.out.println(content);
+			data.close();
+
+function ok(id) // displays the content of file with id
+{
+		document.getElementById('hide').style.display = "block";
+		if (document.getElementById('txtEditor').style.display !== "none")
+		{
+			document.getElementById('txtEditor').style.display = "none";
+		}
+		else
+		{
+			document.getElementById('txtEditor').style.display = "block";
+		}
+		
+		if(typeof(Storage) !== "undefined")
+		{
+			sessionStorage.setItem("id", id);
+			var file = new XMLHttpRequest();
+			file.onreadystatechange = function()
+			{
+				if (this.readyState == 4 && this.status == 200)
+				{
+					var Doc = this.responseXML;
+					document.getElementById("docid").innerHTML = Doc.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+					document.getElementById("Textarea1").innerHTML = Doc.getElementsByTagName("data")[0].childNodes[0].nodeValue;
+					//document.getElementById("Textarea1").innerHTML = Doc;
+					document.getElementById('txtEditor').style.display = "block";
+				}
+			};
+			file.open("POST","/getDocument", true);
+			file.send(id);
+		}
+		else
+		{
+			if(sessionStorage.getItem("id")==id)
+			{
+				document.getElementById('txtEditor').style.display = "block";
+			}
+			else
+			{
+				sessionStorage.setItem("id", id);
+			
+				var file = new XMLHttpRequest();
+				file.onreadystatechange = function()
+				{
+					if (this.readyState == 4 && this.status == 200)
+					{
+						var Doc = this.responseXML;
+						document.getElementById("Textarea1").innerHTML = Doc.getElementsByTagName("data")[0].childNodes[0].nodeValue;
+						document.getElementById('txtEditor').style.display = "block";
+					}
+				};
+				file.open("POST","/getDocument", true);
+				file.send(id);
+			}
+		}
+}
+<div id="txtEditor" class="form-group" style="display:none">
+	<h4>Its id is <a id="docid"></a></h4>
+	<textarea class="form-control rounded-0" id="Textarea1" rows="10"></textarea>
+	<button type="button" class="btn btn-primary" onclick="closeIT()">Close This Document Without Saving</button>
+	<p><div id="hide">
+		<p><button type="button" class="btn btn-danger" onclick="deletealert()" >Delete This Document</button>
+		<button type="button" class="btn btn-warning" id="save">Save Change This Document</button></p>
+		<p>If you want to change the name of file, type full file name here(with extension)<br>
+		<input type="text" name="titleName"></input><button type="button" onclick="changeDname()">Change File Name</button></p>
+		<p>
+			Share this document with:
+			<input type="number" name="shared_num" id="shared_num"></input><br>
+			<button type="button" id="share">Share</button>
+			<a id="shared"></a>
+		</p>
+	</div></p>
+</div>
+
+var file = new XMLHttpRequest();
+		file.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				var Doc = this.responseXML;
+				document.getElementById("Textarea1").innerHTML = this.responseText;
+			}
+		};
+		file.open("GET","/getDocument", true);
+		file.send(id);
+		
+		if(sessionStorage.getItem("id")==id)
+			{
+				if (document.getElementById('txtEditor').style.display !== "none")
+				{
+					document.getElementById('txtEditor').style.display = "none";
+				}
+				else
+				{
+					document.getElementById('txtEditor').style.display = "block";
+				}
+			}
+			
+			
+if(sessionStorage.getItem("id")==id)
+			{
+				if (document.getElementById('txtEditor').style.display !== "none")
+				{
+					document.getElementById('txtEditor').style.display = "none";
+				}
+				else
+				{
+					document.getElementById('txtEditor').style.display = "block";
+				}
+			}
+			
+			
+			function save()
+	{
+		var ID = document.getElementById("docid").textContent;
+		var content = document.getElementById("Textarea1").textContent;
+		
+		var input = {};
+		input.data = content;
+		input.id = ID;
+		
+		//console.log(document.getElementById("Textarea1").textContent);
+		//console.log("Id = " + document.getElementById("docid").textContent);
+	}
+	
+	
+	$(function () 
+	{
+			$("#btnGet").click(function ()
+			{
+				var input = {};
+				input.id = document.getElementById("docid").textContent;
+				input.c = $("#Textarea1").val();
+				$.ajax(
+				{
+					type:"POST",
+					url: "/saveDocument",
+					data:'input:' + JSON.stringify(input),
+					contentType: "application/json; charset=utf-8",
+		            dataType: "json",
+		            success: function (response)
+		            {
+		            	alert("Saved successfully");
+		            },
+		            failure: function (response)
+		            {
+		            	alert(response.responseText);
+		            },
+		            error: function (response)
+		            {
+		            	alert(response.responseText);
+		            }
+				});
+			});
+	});
+	
+	<div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+    
+    xhrFields:
+		{
+			responseType: 'blob' // to avoid binary data being mangled on charset conversion
+		},
+    var filename = "";
+			var disposition = xhr.getResponseHeader("Content-Disposition");
+			console.log(xhr.getAllResponseHeaders());
+			if (disposition && disposition.indexOf('attachment') !== -1)
+			{
+				var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+				var matches = filenameRegex.exec(disposition);
+				if (matches != null && matches[1])
+				{
+					filename = matches[1].replace(/['"]/g, '');
+				}
+			}
+			
+			if (typeof window.navigator.msSaveBlob !== 'undefined')
+			{
+				// IE workaround for "HTML7007: One or more blob URLs were revoked by closing the blob for which they were created. These URLs will no longer resolve as the data backing the URL has been freed."
+				window.navigator.msSaveBlob(blob, filename);
+			} 
+			else
+			{
+				var URL = window.URL || window.webkitURL;
+				var downloadUrl = URL.createObjectURL(blob);
+				if (filename)
+				{
+					// use HTML5 a[download] attribute to specify filename
+					var a = document.createElement("a");
+					if (typeof a.download === 'undefined')
+					{
+						window.location.href = downloadUrl;
+					}
+					else
+					{
+						a.href = downloadUrl;
+						a.download = filename;
+						document.body.appendChild(a);
+						a.click();
+					}
+				}
+				else
+				{
+					alert("Some error occured.");
+					//window.location.href = downloadUrl;
+				}
+				setTimeout(function () { URL.revokeObjectURL(downloadUrl); }, 100); // cleanup
+			}
+		}
+    
+	
